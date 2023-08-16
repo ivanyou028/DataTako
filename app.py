@@ -33,11 +33,12 @@ with st.sidebar:
     if not OPENAI_API_KEY:
         OPENAI_API_KEY = st.text_input("OpenAI API Key", key="chatbot_api_key", type="password", placeholder="sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
     data_files = st.file_uploader("Upload your data file", type=['csv', 'xlsx', 'json', 'txt'], accept_multiple_files=True)
-
+    if len(data_files):
+        st.toast("File Uploaded Successfully", icon='🎉')
+        
 if not len(data_files):
     pass
 else:
-    st.toast("File Uploaded Successfully", icon='🎉')
     dataframes = [load_df(file) for file in data_files]
 
     tabs = st.tabs([file.name for file in data_files])
