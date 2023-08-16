@@ -3,4 +3,4 @@ pandasai
 python-dotenv
 langchain==0.0.231
 openpyxl
-bs4
+beautifulsoup4
