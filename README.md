@@ -26,26 +26,26 @@ source env/bin/activate
 pip install -r requirements.txt
 ```
 ## Usage
-1. Set up your OpenAI API key:
-- Obtain an API key from OpenAI.
-- Create a file at <project-root>/.streamlit/secrets.toml
-- Add this line to the new file (replace it with your own api key)
+* Set up your OpenAI API key
+  * Obtain an API key from OpenAI.
+  * Create a file at <project-root>/.streamlit/secrets.toml
+  * Add this line to the new file (replace it with your own api key)
 ```
 OPENAI_API_KEY = "your open api key"
 ```
-2. Run the web application:
+*  Run the web application
 ```
 streamlit run app.py
 ```
-3. Access the application:
-- Open your web browser and go to http://localhost:8501 to access the DataTako web application.
-4. Upload your data file:
-- Click on the "Upload your file" button and select the file you want to analyze.
-- The uploaded data will be displayed in a table for visualization.
-5. Interact with the AI model:
-- Enter your queries in the provided text area.
-- Click the "Chat with data" button to interact with the AI model based on the uploaded data.
-- The AI model will provide insights and answers related to your queries.
+* Access the application
+  * Open your web browser and go to http://localhost:8501 to access the DataTako web application.
+* Upload your data file
+  * Click on the "Upload your file" button and select the file you want to analyze.
+  * The uploaded data will be displayed in a table for visualization.
+* Interact with the AI model
+  * Enter your queries in the provided text area.
+  * Click the "Chat with data" button to interact with the AI model based on the uploaded data.
+  * The AI model will provide insights and answers related to your queries.
 
 
 
