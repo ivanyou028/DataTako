@@ -12,12 +12,12 @@ OPENAI_API_KEY = st.secrets['OPENAI_API_KEY']
 openai.api_key = OPENAI_API_KEY
 
 # Set page configuration and title for Streamlit
-st.set_page_config(page_title="csvGPT", page_icon="📄", layout="wide")
+st.set_page_config(page_title="DataTako", page_icon="🐙", layout="wide")
 
 # Add header with title and description
 st.markdown(
-    '<p style="display:inline-block;font-size:40px;font-weight:bold;">📊csvGPT </p>'
-    ' <p style="display:inline-block;font-size:16px;">csvGPT is tool that uses AI-powered '
+    '<p style="display:inline-block;font-size:40px;font-weight:bold;">🐙DataTako </p>'
+    ' <p style="display:inline-block;font-size:16px;">DataTako is tool that uses AI-powered '
     'natural language processing to analyze and provide insights on CSV data. Users can '
     'upload CSV files, view the data, and have interactive conversations with the AI model '
     'to obtain valuable information and answers related to the uploaded data <br><br></p>',

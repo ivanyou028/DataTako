@@ -1,7 +1,7 @@
-# csvGPT
+# DataTako
 
-csvGPT is an AI-powered web application that allows users to upload CSV files, visualize the data, and have interactive conversations with an AI model. The application leverages natural language processing and data analysis capabilities to provide insights, answer queries, and facilitate data exploration in a user-friendly manner.
-![Screenshot (466)](https://github.com/RafayKhattak/csvGPT/assets/90026724/9ee0ad74-51ee-4c71-8bed-60452eee80cb)
+DataTako is an AI-powered web application that allows users to upload CSV files, visualize the data, and have interactive conversations with an AI model. The application leverages natural language processing and data analysis capabilities to provide insights, answer queries, and facilitate data exploration in a user-friendly manner.
+![Screenshot (466)](https://github.com/RafayKhattak/DataTako/assets/90026724/9ee0ad74-51ee-4c71-8bed-60452eee80cb)
 
 ## Features
 
@@ -15,23 +15,29 @@ csvGPT is an AI-powered web application that allows users to upload CSV files, v
 
 1. Clone the repository:
 ```
-git clone https://github.com/your-username/csvGPT.git
-cd csvGPT
+git clone https://github.com/your-username/DataTako.git
+cd DataTako
 ```
-2. Install the required dependencies:
+2. Install the required dependencies in a virtual environment:
 ```
+python -m venv env
+source env/bin/activate
 pip install -r requirements.txt
 ```
 ## Usage
 1. Set up your OpenAI API key:
 - Obtain an API key from OpenAI.
-- Set your OpenAI API key as an environment variable named OPENAI_API_KEY.
+- Create a file at <project-root>/.streamlit/secrets.toml
+- Add this line to the new file (replace it with your own api key)
+```
+OPENAI_API_KEY = "your open api key"
+```
 2. Run the web application:
 ```
 streamlit run app.py
 ```
 3. Access the application:
-- Open your web browser and go to http://localhost:8501 to access the csvGPT web application.
+- Open your web browser and go to http://localhost:8501 to access the DataTako web application.
 4. Upload your CSV file:
 - Click on the "Upload your CSV file" button and select the CSV file you want to analyze.
 - The uploaded data will be displayed in a table for visualization.
