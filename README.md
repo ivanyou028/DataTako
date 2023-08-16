@@ -1,7 +1,9 @@
 # DataTako
 
 DataTako is an AI-powered web application that allows users to upload data files, visualize the data, and have interactive conversations with an AI model. The application leverages natural language processing and data analysis capabilities to provide insights, answer queries, and facilitate data exploration in a user-friendly manner.
-![Screenshot](/assets/screenshot.png "Screenshot")
+
+https://github.com/ivanyou028/DataTako/assets/66818068/d720f2c5-f2cd-4a3c-b1d7-357c16f871aa
+
 ## Features
 
 - **File Upload**: Users can easily upload their data files through the web interface (csv, json, xlsx, txt are supported).
