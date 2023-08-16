@@ -15,7 +15,7 @@ st.set_page_config(page_title="DataTako", page_icon="🐙", layout="wide")
 data_files = []
 
 def chat_with_data(dfs, prompt, pandas_ai):
-    result = pandas_ai.run(dfs, prompt=prompt, is_conversational_answer=False, show_code=True)
+    result = pandas_ai.run(dfs[0] if len(dfs) == 1 else dfs, prompt=prompt, is_conversational_answer=False, show_code=True)
     print(result)
     return result
 
