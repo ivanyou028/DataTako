@@ -7,7 +7,11 @@ from pandasai.middlewares.streamlit import StreamlitMiddleware
 from util import load_df
 
 # Get API key
-OPENAI_API_KEY = st.secrets['OPENAI_API_KEY']
+OPENAI_API_KEY = ""
+try:
+    st.secrets['OPENAI_API_KEY']
+except KeyError:
+    pass
 
 # Set page configuration and title for Streamlit
 st.set_page_config(page_title="DataTako", page_icon="🐙", layout="wide")
