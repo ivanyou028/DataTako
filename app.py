@@ -20,7 +20,7 @@ except KeyError:
 data_files = []
 
 def chat_with_data(dfs, prompt, pandas_ai):
-    result = pandas_ai.run(dfs[0] if len(dfs) == 1 else dfs, prompt=prompt, is_conversational_answer=False, show_code=True)
+    result = pandas_ai.run(dfs[0] if len(dfs) == 1 else dfs, prompt=prompt, show_code=True)
     print(result)
     return result
 
@@ -57,12 +57,13 @@ else:
         else:
             openai.api_key = OPENAI_API_KEY
             llm = OpenAI(api_token=OPENAI_API_KEY)
-            # pandas_ai = PandasAI(llm, middlewares=[StreamlitMiddleware()], custom_whitelisted_dependencies=["scikit-learn"])
-            pandas_ai = PandasAI(llm, middlewares=[StreamlitMiddleware()])
+            print(llm)
+            pandas_ai = PandasAI(llm, middlewares=[StreamlitMiddleware()], custom_whitelisted_dependencies=["scikit-learn", "matplotlib"])
             result = chat_with_data(dataframes, input_text, pandas_ai)
             st.success(result)
-            expander = st.expander("See Code")
-            expander.code(pandas_ai.last_code_executed)
+            if pandas_ai.last_code_generated:
+                expander = st.expander("See Code")
+                expander.code(pandas_ai.last_code_generated)
         if pandas_ai.last_error:
             st.error(pandas_ai.last_error)
         

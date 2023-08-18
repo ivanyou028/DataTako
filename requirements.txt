@@ -1,5 +1,5 @@
 streamlit
-pandasai
+pandasai==0.8.4
 python-dotenv
 langchain==0.0.231
 openpyxl
