@@ -6,15 +6,16 @@ import openai
 from pandasai.middlewares.streamlit import StreamlitMiddleware
 from util import load_df
 
+# Set page configuration and title for Streamlit
+st.set_page_config(page_title="DataTako", page_icon="🐙", layout="wide")
+
 # Get API key
 OPENAI_API_KEY = ""
 try:
-    st.secrets['OPENAI_API_KEY']
+    OPENAI_API_KEY = st.secrets['OPENAI_API_KEY']
 except KeyError:
     pass
 
-# Set page configuration and title for Streamlit
-st.set_page_config(page_title="DataTako", page_icon="🐙", layout="wide")
 
 data_files = []
 
@@ -56,7 +57,8 @@ else:
         else:
             openai.api_key = OPENAI_API_KEY
             llm = OpenAI(api_token=OPENAI_API_KEY)
-            pandas_ai = PandasAI(llm, middlewares=[StreamlitMiddleware()], custom_whitelisted_dependencies=["scikit-learn"])
+            # pandas_ai = PandasAI(llm, middlewares=[StreamlitMiddleware()], custom_whitelisted_dependencies=["scikit-learn"])
+            pandas_ai = PandasAI(llm, middlewares=[StreamlitMiddleware()])
             result = chat_with_data(dataframes, input_text, pandas_ai)
             st.success(result)
             expander = st.expander("See Code")
